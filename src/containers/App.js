@@ -20,7 +20,10 @@ function App() {
   };
 
   const filteredRobots = robots.filter((robot) => {
-    return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+    return (
+      robot.name.toLowerCase().includes(searchfield.toLowerCase()) ||
+      robot.email.toLowerCase().includes(searchfield.toLowerCase())
+    );
   });
 
   return !robots.length ? (
